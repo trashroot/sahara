@@ -9,6 +9,11 @@
 
 # dependencies
 /node_modules
+node_modules
+
+
+#test cases
+/e2e
 
 # profiling files
 chrome-profiler-events*.json

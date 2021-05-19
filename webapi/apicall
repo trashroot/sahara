@@ -1,0 +1,13 @@
+# POST http://localhost:3003/api/login HTTP/1.1
+# content-type: 'application/json'
+# # Authorization: 'Bearer zbc'
+
+# {
+#     "id": 12,
+#     "name": "John"
+# }
+
+
+
+GET http://localhost:3003/api/stock-top-up HTTP/1.1
+content-type: 'application/json'

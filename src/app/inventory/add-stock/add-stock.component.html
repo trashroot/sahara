@@ -1,0 +1,97 @@
+<app-dashboard-nav></app-dashboard-nav>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <span>{{title}}</span>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="newForm" (ngSubmit)="add()">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" formControlNmae="Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="weight">Weight</label>
+                        <input type="text" class="form-control" id="weight" formControlName="Weight">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="category">Category</label>
+                        <input type="text" class="form-control" id="category" formControlNmae="StockCategorySNo">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="batchno">Batch No</label>
+                        <input type="text" class="form-control" id="batchno" formControlName="BatchNo">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="quantity">Quantity</label>
+                        <input type="text" class="form-control" id="quantity" formControlNmae="Quantity">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="pr">Purchase Rate</label>
+                        <input type="text" class="form-control" id="pr" formControlName="PurchaseRate">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="mrp-rate">Mrp. Rate</label>
+                        <input type="text" class="form-control" id="mrp-rate" formControlNmae="MrpRate">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="sr">Selling Rate</label>
+                        <input type="text" class="form-control" id="sr" formControlName="SellingRate">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="smargin">Selling Margin</label>
+                        <input type="text" class="form-control" id="smargin" formControlNmae="SellingMargin">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="discount">Discount</label>
+                        <input type="text" class="form-control" id="discount" formControlName="Discount">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="gstno">CGSTSNo</label>
+                        <input type="text" class="form-control" id="gstno" formControlNmae="CGSTSNo">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="sgst">SGSTSNo</label>
+                        <input type="text" class="form-control" id="sgst" formControlName="SGSTSNo">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="mfd">Manufacture Date</label>
+                        <input type="date" class="form-control" id="mfd" formControlNmae="ManufactureDate">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="expd">Expiry Date</label>                        
+                        <input type="date" class="form-control" id="expd" formControlName="ExpiryDate">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="lsq">Low Stock Qty</label>
+                        <input type="text" class="form-control" id="lsq" formControlNmae="LowStockQty">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="hsq">High Stock Qty</label>
+                        <input type="text" class="form-control" id="hsq" formControlNmae="HighStockQty">
+                    </div>
+                </div>
+                <a routerLink="/inventory">
+                    <button type="button" class="btn btn-sm btn-primary txt-primary">Cancel</button>
+                </a>
+                <button type="submit" class="btn mx-2 btn-sm cmp-bg-primary txt-primary"
+                    [disabled]="!newForm.valid">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

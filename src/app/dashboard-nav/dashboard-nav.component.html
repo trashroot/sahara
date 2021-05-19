@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg theme-color">
+    <span class="position-absolute d-none d-md-inline txt-primary title" style="font-family: serif;">SAHARA</span>
+    <div class="container">
+        <!-- This Dashboard link is for mobile -->
+        <a class="navbar-brand txt-primary d-sm-inline d-md-none" routerLink="/dashboard">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <i class="fa fa-bars txt-primary"></i>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <!-- This Dashboard link is for desktop -->
+                <li class="nav-item d-none d-md-inline">
+                    <a class="navbar-brand txt-primary" [routerLinkActive]="['active-menu']" routerLink="/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle txt-primary" [ngClass]="{'active-menu': (rla.isActive || rla1.isActive || rla2.isActive || rla3.isActive)}"
+                        id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Master</a>
+                    <div class="dropdown-menu theme-color" aria-labelledby="navbarDropdown">                        
+                        <a class="dropdown-item txt-primary" routerLinkActive #rla="routerLinkActive" routerLink="/master/party-category">Party Category</a>
+                        <a class="dropdown-item txt-primary" routerLinkActive #rla1="routerLinkActive" routerLink="/master/party-list">Party Master</a>
+                        <a class="dropdown-item txt-primary" routerLinkActive #rla2="routerLinkActive" routerLink="/master/stock-category">Stock Category</a>
+                        <div class="dropdown-divider "></div>
+                        <a class="dropdown-item txt-primary" routerLinkActive #rla3="routerLinkActive" routerLink="/master/gst">GST Rate Master</a>
+                    </div>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link txt-primary" [routerLinkActive]="['active-menu']" routerLink="/inventory" >Inventory</a>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle txt-primary" [ngClass]="{'active-menu': (irla.isActive || irla1.isActive || irla2.isActive)}"
+                        id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">Inventory</a>
+                    <div class="dropdown-menu theme-color" aria-labelledby="navbarDropdown">                        
+                        <a class="dropdown-item txt-primary" routerLinkActive #irla="routerLinkActive" routerLink="/inventory">Stock</a>
+                        <a class="dropdown-item txt-primary" routerLinkActive #irla1="routerLinkActive" routerLink="/inventory/stock-top-up">Stock TopUp</a>
+                        <a class="dropdown-item txt-primary" routerLinkActive #irla2="routerLinkActive" routerLink="/inventory/stock-return">Stock Return</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link txt-primary" href="javascript:void(0)" >Transaction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link txt-primary " href="javascript:void(0)" >Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link txt-primary " [routerLinkActive]="['active-menu']" routerLink="/settings" >Settings</a>
+                </li>
+
+            </ul>
+            <!-- <span class="navbar-text">
+                <button type="button" class="btn btn-sm mat-raised-button cmp-bg-primary txt-primary">Logout</button>
+            </span> -->
+        </div>
+    </div>
+    <span class="navbar-text">
+        <button type="button" class="btn btn-sm mat-raised-button cmp-bg-primary txt-primary">Logout</button>
+    </span>
+</nav>

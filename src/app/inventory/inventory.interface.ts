@@ -1,0 +1,21 @@
+export interface IInventory {
+    id: number,
+    SNo: number,
+    Name: string,
+    StockCategorySNo:number,
+    Weight: number,
+    Quantity: number,
+    BatchNo: string,
+    PurchaseRate: number,
+    MrpRate: number,
+    SellingRate: number,
+    SellingMargin: number,
+    Discount: number,
+    CGSTSNo: string,
+    SGSTSNo: string,
+    ManufactureDate: string,
+    ExpiryDate: string,
+    LowStockQty: number,
+    HighStockQty: number,
+    IsActive: boolean
+}

@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --theme-color: #008b8b;
+    --complementary-color: #ff5722;
+    --text-color: #fffaf0;
+    font-size: 16px;
+}
+
+.theme-color {
+    background-color: var(--theme-color);
+}
+
+.cmp-bg-primary {
+    background-color: var(--complementary-color);
+}
+
+.cmp-bg-secondry {
+    background-color: var(--text-color);
+}
+
+.txt-primary {
+    color: var(--text-color);
+}
+
+.txt-secondry {
+    color: var(--complementary-color);
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a, u {
+    text-decoration: none !important;
+}
+
+a:hover, button:hover{
+    color: #d0c4c4 !important;
+}
+
+.table-responsive{
+    overflow: unset !important;
+}
+
+.fa-pencil-square-o, .fa-trash{
+    cursor: pointer;
+}
+
+.card-header{
+    font-size: larger;
+    font-weight: 410;
+}
+
+label{
+    font-weight: 410;
+}

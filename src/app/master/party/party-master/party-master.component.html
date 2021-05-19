@@ -1,0 +1,56 @@
+<app-dashboard-nav></app-dashboard-nav>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header" style="font-size: large;">
+            <div class="row align-items-center">
+                <div class="col-3">
+                    <span>{{title}}</span>
+                    <i class="fa fa-plus mx-2" aria-hidden="true" title="Upload Excel"></i>
+                </div>
+                <div class="col-9">
+                    <a [routerLink]="['add']">
+                        <button type="button" class="btn btn-sm float-right cmp-bg-primary txt-primary">New</button>
+                    </a>
+                    <button type="button" (click)="deleteMultipleRecords()" class="btn btn-sm float-right cmp-bg-primary mx-2 txt-primary" title="Delete Multiple Records">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table datatable [dtTrigger]="dtTrigger" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Address1</th>
+                            <th scope="col">Address2</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let party of parties">
+                            <td>
+                                <input type="checkbox" (change)="changeSelection($event, party.id)">
+                            </td>
+                            <td>{{party.FirstName}}</td>
+                            <td>{{party.LastName}}</td>
+                            <td>{{party.Address1}}</td>
+                            <td>{{party.Address2}}</td>
+                            <td>{{party.Phone}}</td>
+                            <td>{{party.Category}}</td>
+                            <td>
+                                <a [routerLink]="['edit', party.id]"><i
+                                        class="fa fa-pencil-square-o fa-lg mx-2 txt-secondry" aria-hidden="true"
+                                        title="Edit"></i></a>
+                                <i class="fa fa-trash fa-lg mx-2 txt-secondry" (click)="delete(party.id)" aria-hidden="true" title="Delete"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<app-dashboard-nav></app-dashboard-nav>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <span>{{title}}</span>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="partyForm" (ngSubmit)="addParty()">
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" formControlName="FirstName" class="form-control" id="firstname">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" formControlName="LastName" class="form-control" id="lastname">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Category</label>
+                    <select class="form-control" formControlName="Category">                        
+                        <option *ngFor="let cat of partyCategories" value="{{cat.id}}">{{cat.Name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address1">Address1</label>
+                    <input type="text" formControlName="Address1" class="form-control" id="address1">
+                </div>
+                <div class="form-group">
+                    <label for="address2">Address2</label>
+                    <input type="text" formControlName="Address2" class="form-control" id="address2">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" formControlName="Phone" class="form-control" id="phone">
+                </div>
+                <div class="form-group">
+                    <label for="active">Active</label>
+                    <div class="form-control border-0">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" formControlName="IsActive" type="radio" id="active-yes"
+                                [value]="1">
+                            <label class="form-check-label" for="active-yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" formControlName="IsActive" type="radio" id="active-no"
+                                [value]="0">
+                            <label class="form-check-label" for="active-no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <a [routerLink]="['/master/party-list']">
+                    <button type="button" class="btn btn-sm btn-primary txt-primary">Cancel</button>
+                </a>
+                <button type="submit" class="btn mx-2 btn-sm cmp-bg-primary txt-primary"
+                    [disabled]="!partyForm.valid">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

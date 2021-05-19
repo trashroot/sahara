@@ -1,0 +1,8 @@
+<div class="container">
+    <div>Value: {{ name.value }}
+        <form ngSubmit="test()">
+            <input type="text" [formControl]="name">
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>

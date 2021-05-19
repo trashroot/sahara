@@ -1,0 +1,48 @@
+<app-dashboard-nav></app-dashboard-nav>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header" style="font-size: large;">
+            <div class="row align-items-center">
+                <div class="col-3">
+                    <span>{{title}}</span>
+                    <i class="fa fa-plus mx-2" aria-hidden="true" title="Upload Excel"></i>
+                </div>
+                <div class="col-9">
+                    <a [routerLink]="['add']">
+                        <button type="button" class="btn btn-sm float-right cmp-bg-primary txt-primary">New</button>
+                    </a>
+                    <button type="button" (click)="deleteMultipleRecords()" class="btn btn-sm float-right cmp-bg-primary mx-2 txt-primary" title="Delete Multiple Records">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table datatable [dtTrigger]="dtTrigger" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Code</th>
+                            <th scope="col">Rate</th>
+                            <th scope="col">Active</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let gstRate of gstRates">
+                            <td>
+                                <input type="checkbox" (change)="changeSelection($event, gstRate.id)">
+                            </td>
+                            <td>{{gstRate.Code}}</td>
+                            <td>{{gstRate.Rate}}</td>
+                            <td>{{gstRate.IsActive? 'Yes' : 'No'}}</td>
+                            <td>
+                                <a [routerLink]="['edit', gstRate.id]"><i class="fa fa-pencil-square-o fa-lg mx-2 txt-secondry" aria-hidden="true" title="Edit"></i></a>
+                                <i class="fa fa-trash fa-lg mx-2 txt-secondry" (click)="delete(gstRate.id)" aria-hidden="true" title="Delete"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<app-login-nav></app-login-nav>
+<div class="container">
+    <form class="login-form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <mat-card class="login-card">
+            <mat-card-content>
+                <mat-form-field class="login-form-width">
+                    <input matInput type="text" ngModel name="email" #email="ngModel" required placeholder="User ID" value="">
+                    <mat-hint class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">Enter a valid userid.</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="login-form-width">
+                    <input matInput type="password" ngModel name="password" #password="ngModel" required placeholder="Password" value="">
+                    <mat-hint class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">Invalid password.</mat-hint>
+                </mat-form-field>
+            </mat-card-content>
+            <div class="d-flex">
+                <div class="action-sec">
+                    <a href="http://">Forget Password</a> / <a href="http://">Register</a>
+                </div>
+                <div class="action-sec" style="text-align: right;">
+                    <button type="submit" class="btn mat-raised-button cmp-bg-primary txt-primary">Login</button>
+                </div>
+            </div>
+        </mat-card>
+    </form>
+</div>

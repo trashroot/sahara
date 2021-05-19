@@ -1,0 +1,17 @@
+.home-nav, .title {
+    font-size: 1.1rem;
+}
+
+.home-nav{
+    cursor: pointer;
+}
+
+.fix-spacing {
+    flex: 0 0 1;
+}
+
+@media only screen and (max-width: 868px) {
+    .navbar-brand {
+        display: none !important;
+    }
+}

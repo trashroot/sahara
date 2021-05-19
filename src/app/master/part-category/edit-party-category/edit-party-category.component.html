@@ -1,0 +1,38 @@
+<app-dashboard-nav></app-dashboard-nav>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <span>{{title}}</span>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="partyForm" (ngSubmit)="editParty()">
+                <div class="form-group">
+                    <label for="code">Code</label>
+                    <input type="text" formControlName="code" class="form-control" id="code">
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" formControlName="name" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="active">Active</label>
+                    <div class="form-control border-0">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" formControlName="status" type="radio" id="active-yes" [value]="1">
+                            <label class="form-check-label" for="active-yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" formControlName="status" type="radio" id="active-no" [value]="0">
+                            <label class="form-check-label" for="active-no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" formControlName="SNo">
+                <a routerLink="/master/party-category">
+                    <button type="button"  class="btn btn-sm btn-primary txt-primary">Cancel</button>
+                </a>
+                <button type="submit" class="btn mx-2 btn-sm cmp-bg-primary txt-primary" [disabled]="!partyForm.valid">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
